@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Lab</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        html{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header{
+            background-color: tomato;
+            min-height: 10vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .navigation{
+            list-style: none;
+            display: flex;
+            background-color: deepskyblue;
+        }
+        .navigation li:not(:last-child){
+            border-right: 1px solid white;
+        }
+        .navigation a{
+            text-decoration: none;
+            display: block;
+            padding: 0.5em;
+            color: white;
+        }
+        .navigation a:hover{
+            background-color: #1565C0;
+        }
+        body{
+            max-width: 800px;
+            margin: auto;
+        }
+        main{
+            background-image: url(http://picsum.photos/id/1015/500);
+            background-size: cover;
+            min-height: 80vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        main > * {
+            /* outline: 1px dashed lime; */
+            flex: 1;
+        }
+        .main-c{
+            flex: 4 500px;
+            text-align: center;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+        }
+        .main-l, .main-r{
+            flex-basis: 100px;
+            background-color: rgba(238,130,238,0.537);
+        }
+        footer{
+            background-color: yellowgreen;
+            height: 10vh;
+        }
+        @media (max-width: 700px){
+            .navigation{
+                width: 100%;
+                text-align: center;
+                /* justify-content: space-around; */
+            }
+            .navigation li{
+                flex-grow: 1;
+            }
+        }
+        @media (max-width: 500px){
+            .navigation{
+                flex-flow: column;
+            }
+            .navigation li:not(:last-child){
+                border-right: none;
+                border-bottom: 1px solid white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="main-l">
+            <h3>News</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores perferendis cum sed provident et modi totam ad necessitatibus! Doloribus, provident?</p>
+        </div>
+        <div class="main-c">
+            <h2>Title</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae blanditiis debitis eaque eligendi magnam nihil dolores ex aperiam necessitatibus? Modi.</p>
+            <div style="text-align: left; margin: 60px 20px 0 60px;">
+                <h3>Title</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sequi molestiae esse laboriosam consectetur eum nisi omnis. Facilis harum eius totam nostrum, consectetur, quam quas ea fugit excepturi dicta aperiam.</p>
+            </div>
+        </div>
+        <div class="main-r">
+            <h3>Ads</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus rerum, unde modi velit provident praesentium.</p>
+        </div>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

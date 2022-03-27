@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form TEST07</title>
+    <style>
+        form{
+            background-color: burlywood;
+            width: 50%;
+            text-align: right;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>HTML Form</h2>
+    <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
+        <label for="Firstname">First Name:</label>
+        <input type="text" name="Firstname"><br><br>
+        <label for="Age">Age:</label>
+        <input type="text" name="Age">
+        <br><br>
+        <fieldset style="width: 200px; margin-left: 100px; border: 1px dashed red;">
+            <legend>Gender:</legend>
+            <input type="radio" name="Gender" value="Male">
+            <label for="Male">Male</label>
+            <input type="radio" name="Gender" value="Female">
+            <label for="Female">Female</label>
+            <input type="radio" name="Gender" value="Other">
+            <label for="Other">Other</label>
+        </fieldset>
+        <br><br>
+        <p style="margin-right: 200px;">Status:</p>
+        <input type="radio" name="Status" value="Single">
+        <label for="Single">Single</label>
+        <input type="radio" name="Status" value="Married">
+        <label for="Married">Married</label>
+        <br><br>
+        <p style="margin-right: 200px;">Vehicles:</p>
+        <input type="checkbox" name="Vehicle1" value="Bike">
+        <label for="Vehicle1">I have a bike</label><br>
+        <input type="checkbox" name="Vehicle2" value="Car">
+        <label for="Vehicle2">I have a car</label><br>
+        <input type="checkbox" name="Vehicle3" value="Boat">
+        <label for="Vehicle3">I have a boat</label>
+        <br><br>
+        <span>Model:</span>
+        <select name="Model" size=4 multiple>
+            <option value="volvo">Volvo</option>
+            <option value="toyota">Toyota</option>
+            <option value="mao">Mao</option>
+            <option value="bmw">BMW</option>
+        </select>
+        <br><br>
+        <textarea name="message" cols="40" rows="5">ใส่ฟรีเทกซ์ yuy</textarea>
+        <br><br>
+        <label for="browser">Browser: </label>
+        <input list="browsers" name="browser">
+        <datalist id=browsers>
+            <option value="IE"></option>
+            <option value="FF"></option>
+            <option value="CH"></option>
+            <option value="SF"></option>
+            <option value="OP"></option>
+        </datalist>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

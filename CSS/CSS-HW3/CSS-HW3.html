@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>CSS-HW3 Facebook Register Page Clone</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+            color: #1c1e21;
+            font-size: 12px;
+            line-height: 1.34;
+        }
+        .main{
+            background: #f0f2f5;
+            padding-bottom: 112px;
+            padding-top: 72px;
+        }
+        .main-content{
+            display: flex;
+            margin: 0 auto;
+            padding: 20px 0;
+            position: relative;
+            width: 980px;
+            flex-flow: nowrap;
+            justify-content: space-between;
+        }
+        .label{
+            vertical-align: top;
+            padding-right: 32px;
+            flex: 0 1;
+        }
+        .logo{
+            padding: 112px 0 16px;
+        }
+        .fb_logo{
+            height: 106px;
+            margin: -28px;
+        }
+        .prose{
+            padding: 0 0 20px;
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 32px;
+            width: 500px;
+        }
+        .form{
+            height: 496px;
+            flex: 0 0 396px;
+        }
+        .loginForm{
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 40px 0 0;
+            padding-bottom: 24px;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .block{
+            display: inline-block;
+            width: 364px;
+            border-radius: 6px
+        }
+        .inputContainer {
+            line-height: 16px;
+            padding: 15px 16px;
+            margin: 6px 0;
+            border: 1px solid #dddfe2;
+            text-align: left;
+            font-size: 17px;
+        }
+        input::placeholder{
+            color:#9e949c
+        }
+        input:focus{
+            outline: none;
+            caret-color: #1877f2;
+            border: 1px solid #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            transition: 0.5s;
+        }
+        input:focus::placeholder{
+            color:rgb(190, 195, 201)
+        }
+        .loginButton{
+            line-height: 48px;
+            padding: 0 16px;
+            margin-top: 10px;
+            border: none;
+            color: white;
+            background-color: #1877f2;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .loginButton:hover{
+            background-color: #166fe5; 
+        }
+        .forgot{
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .forgot a{
+            color: #1877f2;
+        }
+        .separate{
+            align-items: center;
+            border-bottom: 1px solid #dadde1;
+            display: flex;
+            margin: 20px 16px;
+            text-align: center;
+        }
+        .newAcc{
+            margin-top: 6px;
+            display: inline-block;
+            white-space: nowrap;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            line-height: 48px;
+            padding: 0 16px;
+            background-color: #42b72a;
+            color: white;
+            font-weight: bold;
+        }
+        .newAcc:hover{
+            text-decoration: none;
+            background-color: #36a420;
+        }
+        .newAcc:active{
+            background-color: #2b9217;
+        }
+        .regPage{
+            margin-top: 28px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .pageLink{
+            color: #1c1e21;
+            font-weight: 600;
+        }
+        ul{
+            list-style: none;
+        }
+        a:not(:hover){
+            text-decoration: none;
+        }
+        .footer{
+            padding-top: 20px;
+        }
+        .footer-content{
+            margin: 0 auto;
+            width: 980px;
+            white-space: nowrap;
+            color: #737373;
+        }
+        .footer-content a{
+            color: #8a8d91;
+        }
+        .localeSelecterList{
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+            flex-flow: wrap;
+            margin-left: -10px
+        }
+        .localeSelecterList li{
+            padding-left: 10px;
+        }
+        .button{
+            display: inline-block;
+            height: 18px;
+            border: 1px solid;
+            border-radius: 2px;
+            box-sizing: content-box;
+            padding: 0 8px;    
+            background-color: #f5f6f7;
+            border-color: #ccd0d5;
+        }
+        .button:hover{
+            background-color: #ebedf0;
+        }
+        .button:active{
+            background-color: #dddfe2;
+            border-color: #bec3c9;
+        }
+        .button i{
+            vertical-align: middle;
+        }
+        .plus{
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/S5vF6T8aL3x.png);
+            background-size: auto;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-position: -171px -272px;
+        }
+        .contentCurve{
+            border-bottom: 1px solid #dddfe2;
+            height: 9px;
+            margin-bottom: 8px;
+        }
+        .footerSiteLink{
+            margin-left: -20px
+        }
+        .footerLinkList{
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 1.6;
+        }
+        .footerLinkList li{
+            padding-left: 20px;
+        }
+        .adChoices{
+            padding-right: 14px;
+        }
+        .adChoices i{
+            position: absolute;
+        }
+        .ads{
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/S5vF6T8aL3x.png);
+            background-size: auto;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-position: 0 -286px;
+        }
+        .copyright{
+            margin: 20px 0;
+            font-size: 11px;
+        }
+        @media (max-width: 1075px){
+            .main-content{
+                height: 536px;
+                margin: 0 40px;
+                width: auto;
+            }
+            .footer-content{
+                margin: 0 40px;
+                width: auto;
+            }
+            /* .label{
+                width: 400px;
+            } */
+            .prose{
+                font-size: 24px;
+                line-height: 28px;
+                width: 368px;
+            }
+        }
+        @media (max-width: 900px){
+            .main{
+                padding-bottom: 164px;
+                padding-top: 20px;
+                width: auto;
+            }
+            .main-content{
+                flex-flow: column;
+                text-align: center;
+            }
+            .label{
+                margin: 0 auto;
+                padding: 0;
+            }
+            .logo{
+                padding: 0 0 20px 0;
+            }
+            .prose{
+                padding: 0;
+            }
+            .form{
+                margin: 0 auto;
+            }
+            .loginForm{
+                width: 396px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main-content">
+            <div class="label">
+                <div class="logo">
+                    <img class="fb_logo"src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook">
+                </div>
+                <h2 class="prose">Facebook helps you connect and share with the people in your life.</h2>
+            </div><!--
+         --><div class="form">
+                <div class="loginForm">
+                    <form action="#">
+                        <input class="inputContainer block" type="text" name="email" placeholder="Email address or phone number" autofocus="1">
+                        <input class="inputContainer block" type="password" name="password" placeholder="Password">
+                        <button class="loginButton block" type="submit" name="login">Log In</button>
+                        <div class="forgot">
+                            <a  href="#">Forgotten password?</a>
+                        </div>
+                        <div class="separate"></div>
+                        <a class="newAcc" href="#">Create New Account</a>
+                    </form>
+                </div>
+                <div class="regPage">
+                    <a href="#" class="pageLink">Create a Page</a>
+                    for a celebrity, brand or business.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <ul class="localeSelecterList">
+                <li>English (UK)</li>
+                <li><a href="#" title="Thai">ภาษาไทย</a></li>
+                <li><a href="#" title="Japanese">日本語</a></li>
+                <li><a href="#" title="Simplified Chinese (China)">中文(简体)</a></li>
+                <li><a href="#" title="Vietnamese">Tiếng Việt</a></li>
+                <li><a href="#" title="French (France)">Français (France)</a></li>
+                <li><a href="#" title="German">Deutsch</a></li>
+                <li><a href="#" title="Russian">Русский</a></li>
+                <li><a href="#" title="Spanish">Español</a></li>
+                <li><a href="#" title="Portuguese (Brasil)">Português (Brasil)</a></li>
+                <li><a href="#" title="Italian">Italiano</a></li>
+                <li><a class="button" href="#" title="Show more languages"><i class="plus"></i></a></li>
+            </ul>
+            <div class="contentCurve"></div>
+            <div class="footerSiteLink">
+                <ul class="footerLinkList">
+                    <li><a href="#" title="Sign up for Facebook">Sign Up</a></li>
+                    <li><a href="#" title="Log in to Facebook">Log In</a></li>
+                    <li><a href="#" title="Take a look at Messenger.">Messenger</a></li>
+                    <li><a href="#" title="Facebook Lite for Android.">Facebook Lite</a></li>
+                    <li><a href="#" title="Browse our Watch videos.">Watch</a></li>
+                    <li><a href="#" title="Take a look at popular places on Facebook.">Places</a></li>
+                    <li><a href="#" title="Check out Facebook games.">Games</a></li>
+                    <li><a href="#" title="Buy and sell on Facebook Marketplace.">Marketplace</a></li>
+                    <li><a href="#" title="Learn more about Facebook Pay">Facebook Pay</a></li>
+                    <li><a href="#" title="Learn more about Oculus">Oculus</a></li>
+                    <li><a href="#" title="Learn more about Facebook Portal">Portal</a></li>
+                    <li><a href="#" title="Take a look at Instagram">Instagram</a></li>
+                    <li><a href="#" title="Take a look at Bulletin newsletter">Bulletin</a></li>
+                    <li><a href="#" title="Browse our Local Lists directory.">Local</a></li>
+                    <li><a href="#" title="Donate to worthy causes.">Fundraisers</a></li>
+                    <li><a href="#" title="Browse our Facebook Services directory.">Services</a></li>
+                    <li><a href="#" title="See the Voting Information Centre">Voting Information Centre</a></li>
+                    <li><a href="#" title="Explore our groups.">Groups</a></li>
+                    <li><a href="#" title="Read our blog, discover the resource centre and find job opportunities.">About</a></li>
+                    <li><a href="#" title="Advertise on Facebook">Create ad</a></li>
+                    <li><a href="#" title="Create a Page">Create Page</a></li>
+                    <li><a href="#" title="Develop on our platform.">Developers</a></li>
+                    <li><a href="#" title="Make your next career move to our brilliant company.">Careers</a></li>
+                    <li><a href="#" title="Learn about your privacy and Facebook.">Privacy</a></li>
+                    <li><a href="#" title="Learn about cookies and Facebook.">Cookies</a></li>
+                    <li><a class="adChoices"href="#" title="Learn about AdChoices.">AdChoices<i class="ads"></i></a></li>
+                    <li><a href="#" title="Review our terms and policies.">Terms</a></li>
+                    <li><a href="#" title="Visit our Help Centre.">Help</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <div>
+                    <span> Meta © 2022</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

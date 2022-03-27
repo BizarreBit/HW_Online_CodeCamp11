@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online CodeCamp11 HW#2</title>
+    <style>
+        body, html{
+            margin: 0;
+        }
+        .header{
+            margin: 0.8rem;
+            font-size: 7vmin;
+            font-weight: 700;
+            color: aliceblue;
+            max-width: 90%;
+            padding: 2vmin;
+            background-color: yellowgreen;
+            border-radius: 2vmin;
+            display: inline-block;
+        }
+        form{
+            background-color: burlywood;
+            width: fit-content;
+            padding: 5px;
+            margin: auto;
+        }
+        .container{
+            display: inline-block;
+            margin: 0.5em;
+            width: 9rem;
+        }
+        input, select{
+            width: 100%
+        }
+        .sub-container{
+            display: inline-block;
+            margin: 0.5em;
+            width: 4rem;
+        }
+        .button{
+            margin: 0.5em;
+            padding: 0.8em 1.4em;
+            width: fit-content;
+            font-weight: 700;
+            color: white;
+            background-color: orangered;
+            border-radius: 0.5em;
+        }
+        legend{
+            font-weight: 600;
+        }
+        label{
+            font-weight: 600;
+        }
+        img{
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;"><div class="header">Online CodeCamp11 HW#2</div></div>
+    <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
+        <fieldset>
+            <legend>Book Flight</legend>
+            <div class="container">
+                <label for="from">Flying from</label><br>
+                <select name="from">
+                    <option value="bangkok">Bangkok, Thailand</option>
+                    <option value="chiang mai">Chiang Mai, Thailand</option>
+                    <option value="phuket">Phuket, Thailand</option>
+                </select>
+            </div>
+            <div class="container">
+                <label for="to">To</label><br>
+                <select name="from">
+                    <option value="bangkok">Bangkok, Thailand</option>
+                    <option value="chiang mai">Chiang Mai, Thailand</option>
+                    <option value="phuket">Phuket, Thailand</option>
+                </select>
+            </div>
+            <br>
+            <div class="container">
+                <label for="depart">Departing</label><br>
+                <input type="date" name="depart">
+            </div>
+            <div class="container">
+                <label for="return">Returning</label><br>
+                <input type="date" name="return">
+            </div>
+            <br>
+            <div class="sub-container">
+                <label for="adult">Adult</label><br>
+                <input type="number" name="adult" min="0">
+            </div>
+            <div class="sub-container">
+                <label for="children">Children</label><br>
+                <input type="number" name="children" min="0">
+            </div>
+            <div class="sub-container">
+                <label for="infant">Infant</label><br>
+                <input type="number" name="infant" min="0">
+            </div>
+            <div class="sub-container">
+                <label style="color: orangered;" for="currency">Currency</label><br>
+                <select name="currency">
+                    <option value="thb">THB</option>
+                    <option value="usb">USD</option>
+                    <option value="cny">CNY</option>
+                </select>
+            </div>
+            <br>
+        </fieldset>
+        <input class="button" type="submit" value="SEARCH">
+    </form>
+    <hr>
+    <img src=".\img\hw2.jpg" alt="Homework #2">
+</body>
+</html>

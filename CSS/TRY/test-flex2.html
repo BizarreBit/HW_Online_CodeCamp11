@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .container{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            background-color: deeppink;
+            width: 80vw;
+            height: 80vh;
+            margin: 10vh auto;
+        }
+        .container > *{
+            background-color: lime;
+            margin: 5px;
+            flex-basis: 50px;
+            /* padding: 20px; */
+            /* font-size: 20px; */
+            /* flex-grow: 1; */
+            text-align: center;
+        }
+        .item3{
+            /* width: 200px; */
+            /* flex-basis: 200px; */
+            flex: 200px;
+            align-self: stretch
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">01</div>
+        <div class="item2">02</div>
+        <div class="item3">03</div>
+        <div class="item4">04</div>
+        <div class="item5">05</div>
+    </div>
+</body>
+</html>

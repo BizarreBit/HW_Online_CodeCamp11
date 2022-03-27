@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online CodeCamp11 LAB#3</title>
+    <style>
+        body, html{
+            margin: 0;
+        }
+        .header{
+            margin: 2%;
+            font-size: 7vmin;
+            font-weight: 700;
+            color: aliceblue;
+            max-width: 90%;
+            padding: 2vmin;
+            background-color: yellowgreen;
+            border-radius: 2vmin;
+            display: inline-block;
+        }
+        table, td, th{
+            border-style: solid;
+            border-width: 1px;
+        }
+        td, th{
+            padding: 3px;
+        }
+        form{
+            width: fit-content;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;"><div class="header">Online CodeCamp11 LAB#3</div></div>
+    <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
+        <table>
+            <tr>
+                <th colspan="2">Pizza Shop 2.0</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Pizza Topping</td>
+                <td>
+                    <input type="radio" name="topping" value="supreme">
+                    <label for="supreme">Supreme</label>
+                    <br>
+                    <input type="radio" name="topping" value="vegetarian">
+                    <label for="vegetarian">Vegetarian</label>
+                    <br>
+                    <input type="radio" name="topping" value="hawaian">
+                    <label for="hawaian">Hawaian</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Pizza Sauce</td>
+                <td>
+                    <select name="sauce">
+                        <option value="tomato">Tomato</option>
+                        <option value="barbeque">Barbeque</option>
+                        <option value="mayonnaise">Mayonnaise</option>
+                        <option value="secret">Secret Sauce</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Optional Extras</td>
+                <td>
+                    <input type="checkbox" name="extra_cheese" value="1">Extra Cheese</input>
+                    <input type="checkbox" name="gluten_free" value="1">Gluten Free Base</input>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Delivery Instruction:
+                    <br>
+                    <textarea name="delivery" cols="50" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Send my Order">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

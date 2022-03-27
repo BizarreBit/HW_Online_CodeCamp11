@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Lab</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        html{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        header{
+            background-color: tomato;
+            height: 10vh;
+        }
+        main{
+            background-color: teal;
+            height: 80vh;
+            display: flex;
+        }
+        main > * {
+            outline: 1px dashed lime;
+            flex: 1;
+        }
+        .main-c{
+            flex-grow: 4;
+            text-align: center;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        footer{
+            background-color: yellowgreen;
+            height: 10vh;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>
+        <div class="main-l">Left</div>
+        <div class="main-c">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, assumenda.</p>
+        </div>
+        <div class="main-r">Right</div>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

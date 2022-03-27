@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Lab 01</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .container{
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+            align-content: flex-end;
+            width: 80vw;
+            height: 80vh;
+            background-color: deeppink;
+            margin:10vh auto;
+            /* flex-flow: column-reverse wrap-reverse; */
+        }
+        .container > *{
+        /* .container > div{ */
+            background-color: lime;
+            margin: 5px;
+            padding: 20px;
+            font-size: 30px;
+            line-height: 50px;
+        }
+        .item3{
+        /* .container > div.item3{ */
+            font-size: 60px;
+            background-color: blue;
+            flex-grow: 5;
+            flex-shrink: 3;
+        }
+        .item1{
+            flex-grow: 1;
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="order:2" class="item1">01s</div>
+        <div style="order:1" class="item2">02s</div>
+        <div style="order:0" class="item3">03S</div>
+        <div style="order:-1" class="item4">04S</div>
+        <div class="item1">01</div>
+        <div class="item2">02</div>
+        <div class="item3">03</div>
+        <div class="item4">04</div>
+        <div class="item4">04</div>
+    </div>
+</body>
+</html>

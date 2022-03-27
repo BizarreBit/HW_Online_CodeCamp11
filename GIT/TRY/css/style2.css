@@ -1,0 +1,9 @@
+h1{
+    color: blue;
+    background-color: antiquewhite;
+}
+h2{
+    color: red;
+    background-color: aliceblue;
+    border: 1px solid lime;
+}
