@@ -1,0 +1,10 @@
+body{
+    background-color: bisque;
+}
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: blueviolet;
+    background-color: chocolate;
+    padding: 1rem;
+}
