@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(evenOdd(15));
+        console.log(evenOdd(22));
+        
+        // function evenOdd(num){
+            //     return (!(num%2)) ? "Even" : "Odd";
+            // }
+            
+        let evenOdd = function (num) {return (!(num%2)) ? "Even" : "Odd";}
+        // let evenOdd = function anyName (num) {return (!(num%2)) ? "Even" : "Odd";}
+
+        let evenOddArrow = num => (!(num%2)) ? "Even" : "Odd";
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="canvas2"></div>
+        <div id="canvas3"></div>
+        <div id="canvas4"></div>
+    </div>
+    <script>
+        function draw(n){
+            let str = "";
+            for(let i=0; i<n; i++){
+                for(let j=0; j<n; j++)
+                    str += (i+1)*(j+1);
+                str += "<br>";
+            }
+            str += `<hr>n = ${n}`;
+            return str;
+        }
+        document.querySelector('#canvas2').innerHTML = draw(2);
+        document.querySelector('#canvas3').innerHTML = draw(3);
+        document.querySelector('#canvas4').innerHTML = draw(4);
+    </script>
+</body>
+</html>
