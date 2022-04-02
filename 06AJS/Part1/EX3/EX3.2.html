@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://javascript.info/task/object-property-this">https://javascript.info/task/object-property-this</a>
+    <script>
+        function makeUser() {
+            return {
+                name: "John",
+                ref: this
+            };
+        };
+
+        let user = makeUser();
+
+        alert( user.ref.name ); // What's the result?
+
+        function makeUserReWrite(){
+            return this; // this time there's no object literal
+            }
+
+        alert( makeUserReWrite().name );
+
+        function makeUserWork() {
+            return {
+                name: "John",
+                ref() {
+                return this;
+                }
+            };
+        }
+
+        let user3 = makeUserWork();
+
+        alert( user3.ref().name );
+    </script>
+</body>
+</html>

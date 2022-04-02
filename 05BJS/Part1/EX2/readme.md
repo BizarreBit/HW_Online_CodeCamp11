@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 2 ตัวดำเนินการเบื้องต้น
+Basic JS Exercise 2 ตัวดำเนินการเบื้องต้น
 1. ให้ระบุค่าของ a, b , c และ d หลังจบ statement ทั้งสามบรรทัด
 let a = 1, b = 1;
 >> a คือ 1, b คือ 1, c และ d ยังไม่ถูกประกาศตัวแปร

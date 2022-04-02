@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 8 Arrow Function
+Basic JS Exercise 9 Arrow Function
 แปลง function ข้างล่างให้อยู่ในรูป arrow function
 
 function ask(question, yes, no) {

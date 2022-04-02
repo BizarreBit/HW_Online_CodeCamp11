@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 4 การเขียนเงื่อนไข
+Basic JS Exercise 4 การเขียนเงื่อนไข
 1. Browser จะแสดงข้อความ "Hello CodeCamp" ไหม
 if ("0"){
     alert('Hello CodeCamp');

@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 5 ตัวดำเนินการแบบตรรกะ
+Basic JS Exercise 5 ตัวดำเนินการแบบตรรกะ
 1. คำสั่งต่อไปนี้จะแสดงค่าเป็นอะไร
 - alert( null || 2 || undefined );
 ≡ alert( 2 || undefined );

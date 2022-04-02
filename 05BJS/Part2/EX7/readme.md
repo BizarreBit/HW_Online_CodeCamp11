@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 7 Switch Case
+Basic JS Exercise 7 Switch Case
 1. แปลง Code ดังกล่าวเป็น if-else statement
 switch (browser) {
     case 'Edge':

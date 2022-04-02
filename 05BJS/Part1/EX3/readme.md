@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 3 การเปรียบเทียบ
+Basic JS Exercise 3 การเปรียบเทียบ
 จงหาค่าของการเปรียบเทียบต่อไปนี้
 - 5 > 4
 >> true

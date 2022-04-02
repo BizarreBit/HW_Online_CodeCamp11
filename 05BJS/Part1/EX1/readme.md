@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 1 ตัวแปรและประเภทของข้อมูล
+Basic JS Exercise 1 ตัวแปรและประเภทของข้อมูล
 
 1. ผลลัพธ์ของ console.log ทั้งสามคืออะไร
 

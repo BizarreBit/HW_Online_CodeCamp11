@@ -1,6 +1,6 @@
 Online CodeCamp 11
 
-Basic JS Excercise 6 วงวน for และ while
+Basic JS Exercise 6 วงวน for และ while
 1. เลขที่ถูก alert เป็นลำดับสุดท้ายคือเลขอะไร
 let i = 3;
 
