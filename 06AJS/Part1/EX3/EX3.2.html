@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="https://javascript.info/task/object-property-this">https://javascript.info/task/object-property-this</a>
     <script>
+        let defaultWindowNameValue =  window.name;
+        
         function makeUser() {
             return {
                 name: "John",
@@ -17,27 +18,45 @@
         };
 
         let user = makeUser();
+        alert( `Value of user.ref.name >>${user.ref.name}<<\n: Original` );
 
-        alert( user.ref.name ); // What's the result?
+        window.name = undefined;
+        alert( `Value of user.ref.name >>${user.ref.name}<<\n: After set window.name = undefined` );
+        
+        window.name = "CodePen";
+        alert( `Value of user.ref.name >>${user.ref.name}<<\n: After set window.name = "CodePen"` );
 
-        function makeUserReWrite(){
-            return this; // this time there's no object literal
-            }
+        window.name = defaultWindowNameValue
 
-        alert( makeUserReWrite().name );
-
-        function makeUserWork() {
+        //Fix the code to conform with original intent of this code
+        function makeThaiUser() {
             return {
-                name: "John",
-                ref() {
-                return this;
-                }
+                nam: "Somchai",
+                ref: this
             };
-        }
+        };
+        let thaiUser = makeThaiUser();
+        alert(user.ref.nam)
 
-        let user3 = makeUserWork();
+        //From https://javascript.info/task/object-property-this
+        // function makeUserReWrite(){
+        //     return this; // this time there's no object literal
+        //     }
 
-        alert( user3.ref().name );
+        // alert( makeUserReWrite().name );
+
+        // function makeUserWork() {
+        //     return {
+        //         name: "John",
+        //         ref() {
+        //         return this;
+        //         }
+        //     };
+        // }
+
+        // let user3 = makeUserWork();
+
+        // alert( user3.ref().name );
     </script>
 </body>
 </html>
