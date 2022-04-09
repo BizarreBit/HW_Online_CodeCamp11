@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="str">String literals (denoted by double or single quotes) and strings returned from String calls in a non-constructor context (that is, called without using the new keyword) are primitive strings. JavaScript automatically converts primitives to String objects, so that it's possible to use String object methods for primitive strings. In contexts where a method is to be invoked on a primitive string or a property lookup occurs, JavaScript will automatically wrap the string primitive and call the method or perform the property lookup.</p>
+    <script>
+        let str = document.querySelector('#str').innerText
+        function allIndexOf(str, search) {
+            let n = 0;
+            let i = 0
+            let index = [];
+            while (true) {
+                n = str.indexOf(search, n);
+                if (n < 0) break;
+
+                index[i] = n;
+                n++;
+                i++;
+            }
+            (i == 0) ? console.log (`Not Found '${search}'`) : console.log (`Found '${search}' ${i} location(s) : ${index}`);
+            return index;
+        }
+        allIndexOf(str, 'String');
+        allIndexOf(str, '.');
+        allIndexOf(str, 'cat');
+
+        function allLastIndexOf(str, search, start = 0) {
+            let n = str.length;
+            let i = 0;
+            let index = [];
+
+            // while (n > 0) {
+            //     n = str.slice(start, n).lastIndexOf(search);
+            while (true) {  
+                n = str.substring(start, n).lastIndexOf(search);
+                
+                // n = str.substr(start, n - start).lastIndexOf(search);
+                
+                if (n < 0) break;
+
+                index[i] = n;
+                n--;
+                i++;
+            }
+            (i == 0) ? console.log (`Not Found '${search}'`) : console.log (`Found '${search}' ${i} location(s) : ${index}`);
+            return index;
+        }
+        
+        allLastIndexOf(str, 'String');
+        allLastIndexOf(str, '.');
+        allLastIndexOf(str, 'cat');
+    </script>
+</body>
+</html>
