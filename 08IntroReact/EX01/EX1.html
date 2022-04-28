@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script>
+      const root = React.createElement(
+        "div",
+        {},
+        React.createElement(
+          "div",
+          { style: { display: "flex", "align-items": "flex-start" } },
+          React.createElement(
+            "h1",
+            { style: { color: "green", padding: "0.5em" } },
+            "Resume"
+          ),
+          React.createElement(
+            "div",
+            {},
+            React.createElement("h2", {}, "My Name"),
+            React.createElement("p", {}, "My Favorite Color"),
+            React.createElement("p", {}, "My Height"),
+            React.createElement("p", {}, "My Weight"),
+            React.createElement("p", {}, "My Favorite Motto")
+          )
+        )
+      );
+      ReactDOM.render(root, document.getElementById("root"));
+    </script>
+  </body>
+</html>

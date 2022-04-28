@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16.13.1/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"
+    ></script>
+    <!-- <script>
+        const rootElement = document.getElementById("root");
+        const headingElement = document.createElement("h1");
+        headingElement.className = "hello-react-text";
+        headingElement.textContent = "Hello, React !";
+        rootElement.append(headingElement);
+    </script> -->
+    <!-- <script>
+      const rootElement = document.getElementById("root");
+      const headingElement = React.createElement(
+        "h1",
+        { className: "hello-react-text" },
+        "Hello, React !",
+      );
+      ReactDOM.render(headingElement, rootElement);
+    </script> -->
+    <!-- <script>
+      const rootElement = document.getElementById("root");
+      const element = React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+          "h1",
+          { className: "hello-react-text" },
+          "Hello, React !",
+          React.createElement(
+            "h2",
+            { className: "hello-react-child" },
+            "Hello, Child !"
+          )
+        )
+      );
+      ReactDOM.render(element, rootElement);
+    </script> -->
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <!-- <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      const name = "Judie";
+      const className="container";
+      const props = {
+          className: "container-test",
+          onClick: () => console.log("Hello, everyone!")
+      }
+      const element = (
+        <div className={className} {...props}>
+          <h1 className="hello-react-text">Hello, {name} !</h1>
+        </div>
+      );
+      ReactDOM.render(element, rootElement);
+    </script> -->
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      function GreedingMessage(props) {
+          return <h1>Welcome {props.name}!</h1>;
+      }
+      const element = (
+        <div className="container">
+          <h1>Welcome React!</h1>
+          <h1>Welcome Judie!</h1>
+          <h1>Welcome John!</h1>
+          {GreedingMessage({name: "React"})}
+          {GreedingMessage({name: "Judie"})}
+          {GreedingMessage({name: "John"})}
+          <GreedingMessage name="React"/>
+          <GreedingMessage name="Judie"/>
+          <GreedingMessage name="John"/>
+        </div>
+      );
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
