@@ -1,0 +1,8 @@
+            Method  Path&Params     Request_Body                    Status_Code     Response_Body
+search      GET     /todos                                          200             { todos: [{ id, title, completed, dueDate }, ...]}
+searchById  GET     /todos/:id                                      200,404,400     { todo: { id, title, completed, dueDate }}
+create      POST    /todos          { title, completed, dueDate }   201,400         { todo: { id, title, completed, dueDate }}
+delete      DELETE  /todos/:id                                      200,404
+edit        PUT     /todos/:id      { title, completed, dueDate }   200,400         { todo: { id, title, completed, dueDate }}
+error                                                               500
+  

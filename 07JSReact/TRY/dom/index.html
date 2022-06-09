@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn-danger {
+        background-color: red;
+        color: #fff;
+      }
+      .container {
+        width: 80%;
+        background: #ccc;
+        margin: 0 auto;
+        height: 500px;
+      }
+      .fs-5 {
+        font-size: 5rem;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Header</h1>
+    <p>Paragraph</p>
+    <input type="text" name="username" placeholder="Enter username" />
+    <button class="btn">CLick</button>
+    <div>
+      <ul>
+        <li id="first-li"><a href="/">Home</a></li>
+        <li><a href="/">Contact</a></li>
+        <li><a href="/">About</a></li>
+      </ul>
+    </div> -->
+
+    <!-- <select>
+      <option>Bangkok</option>
+      <option>Loei</option>
+      <option>Nan</option>
+    </select>
+    <select>
+      <option>Select district</option>
+    </select> -->
+
+    <!-- <div style="border: 1px solid red">
+      <p>Paragraph</p>
+    </div> -->
+
+    <!-- <form>
+        <input type="text">
+        <button>Click</button>
+    </form> -->
+    <!-- Browser Event -->
+    <!-- 1. HTML Element -->
+    <button onclick="alert('HTML Element Clicked')">Click to alert</button>
+    <!-- 2. DOM property -->
+    <button id="btn" name="btn-alert">Click to alert</button>
+
+    <div id="main" style="background-color: aquamarine; padding: 1.5rem">
+      <ul style="background-color: darkgray">
+        <li style="background-color: blue">First</li>
+        <li style="background-color: coral">Second</li>
+      </ul>
+    </div>
+
+    <form>
+      <input type="text" />
+      <button>Click</button>
+    </form>
+
+    <a href="https://google.co.th">Goto Google</a>
+
+    <form id="prevent" action="https://someserver.api" method="get">
+      <input type="text" name="username" />
+      <input type="password" name="password" />
+      <button type="submit">Submit</button> 
+      <!-- Type: button menu reset submit(default) -->
+    </form>
+    <script>
+      //   document.body.style.backgroundColor = "green";
+      //   setTimeout(() => {
+      //     location.assign(`https://google.co.th/`);
+      //   }, 5000);
+
+      //   const h1 = document.body.firstElementChild;
+      //   const firstA =
+      //     document.body.firstElementChild.nextElementSibling.nextElementSibling
+      //       .nextElementSibling.firstElementChild.firstElementChild
+      //       .firstElementChild;
+      //   h1.style.color = "cyan";
+      //   firstA.innerHTML = "First Button";
+
+      //   const firstLi = document.getElementById("first-li");
+      //   firstLi.style.display = "none";
+
+      //   const lis = document.querySelectorAll("li");
+      //   console.log(lis);
+      //   lis[1].style.display = "none";
+      //   const li = document.querySelector("li");
+      //   li.style.border = "1px solid red";
+      //   const secondLi = li.nextElementSibling;
+
+      //   const ul = document.querySelector("ul");
+      //   const sli = ul.querySelector("li");
+
+      //   const aTag = document.getElementsByTagName("a");
+      //   console.log(aTag);
+
+      //   const input = document.getElementsByName("username");
+      //   console.log(input);
+
+      //   const btn = document.getElementsByClassName("btn");
+      //   console.log(btn);
+      //   const btn2 = document.querySelector(".btn");
+      //   console.log(btn2);
+
+      //   btn2.classList.add("btn-danger");
+
+      //   const newDiv = document.createElement("div");     //<div></div>
+      //   newDiv.className = "container";                   //<div class="container"></div>
+      //   newDiv.innerHTML = "This is container <strong>Div</strong>";       //<div class="container">This is container Div</div>
+      //   console.log(newDiv);
+      //   document.body.prepend(newDiv);
+
+      // const div = document.querySelector("div");
+      // const h1 = document.createElement("h1");
+      // h1.innerText = "Heading";
+      // //   div.append(h1);
+      // //   div.prepend(h1);
+      // //   div.after(h1);
+      // //   div.before(h1);
+
+      // div.insertAdjacentHTML("beforebegin", "<h1>HeadingHtmlBB</h1>");
+      // div.insertAdjacentHTML("beforeend", "<h1>HeadingHtmlBE</h1>");
+      // div.insertAdjacentHTML("afterbegin", "<h1>HeadingHtmlAB</h1>");
+      // div.insertAdjacentHTML("afterend", "<h1>HeadingHtmlAE</h1>");
+
+      //   const p = document.querySelector("p");
+      //   //   setTimeout(() => p.remove(), 5000);
+      //   //   p.style.fontSize = "5rem";
+      //   p.className = "fs-5";
+      //   p.classList.add("hidden");
+      //   setTimeout(() => {
+      //     // p.classList.remove("hidden");
+      //     p.classList.toggle("hidden");
+      //   }, 5000);
+
+      // Browser Event
+      // 2. DOM property
+      //   const btn = document.querySelector("#btn");
+      //   //   btn.onclick = () => alert("DOM Property Clicked");
+      //   //   setTimeout(() => {
+      //   //     btn.onclick = null;
+      //   //   }, 5000);
+      //   btn.onclick = function () {
+      //     console.log(this.name);
+      //   };
+      // //   btn.onclick = function () {
+      // //     alert("Replaced with new fuction");
+      // //   };
+
+      //   const li = document.querySelector("li");
+      //   li.onclick = function () {
+      //     console.log(this);
+      //   };
+
+      //   // 3. addEventListener
+      //   function clickBtn() {
+      //     alert("Clicked");
+      //   }
+
+      //   const btn = document.querySelector("#btn");
+      //   btn.addEventListener("click", function () {
+      //     console.log(this.name);
+      //   });
+      //   //   btn.addEventListener("click", function () {
+      //   //     alert("Add new function with replacing");
+      //   //   });
+      //   //   btn.removeEventListener("click", function () {
+      //   //     alert("Add new function with replacing");
+      //   //   });
+      //   // function variable is a reference variable
+      //   btn.addEventListener("click", clickBtn);
+      //   btn.removeEventListener("click", clickBtn);
+
+      //   //   Event Object
+      //   btn.addEventListener("click", function (event) {
+      //     console.log(event);
+      //   });
+
+      const div = document.getElementById("main");
+      div.addEventListener("click", function (event) {
+        console.log(event);
+      });
+
+      const input = document.querySelector("input");
+      input.addEventListener("change", function (event) {
+        console.log(event.target.value);
+        console.log(event.target.value ** 2);
+      });
+
+      const a = document.querySelector("a");
+      a.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (confirm("Are you sure?")) location.href = event.target.href;
+      });
+
+      const form = document.querySelector("#prevent");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .error {
+        color: red;
+        border-color: red;
+      }
+      .line-through {
+        color: seagreen;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LAB1 -->
+    <button>Click</button>
+    <hr />
+
+    <!-- LAB2,3 -->
+    <!-- HTML-attribute -->
+    <!-- <form onsubmit="alert('Form is submitted')"> -->
+    <form>
+      <input />
+      <button>Submit</button>
+    </form>
+    <hr />
+
+    <!-- LAB4 -->
+    <a href="https://google.com">Google</a>
+    <hr />
+
+    <!-- LAB5 -->
+    <input class="lab5" type="text" name="nickname" />
+    <input class="lab5" type="text" name="job" />
+    <hr />
+
+    <!-- LAB6 -->
+    <button id="lab6">Click to hide me</button>
+    <hr />
+
+    <!-- LAB7 -->
+    <button id="lab7">Click to hide text</button>
+    <h1>Text</h1>
+    <hr />
+
+    <!-- LAB8 -->
+    <button id="lab8">Hide</button>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <hr />
+
+    <!-- LAB9 -->
+    <!-- <form id="lab9">
+      <input type="text" placeholder="Phone Number"/>
+      <button>Check</button>
+      <br /><span style="color: red"></span>
+    </form> -->
+    <input id="lab9input" type="text" placeholder="Phone Number" />
+    <button id="lab9btn">Check</button>
+    <p id="lab9warn" class="error hidden"></p>
+    <hr />
+
+    <!-- LAB10 -->
+    <div>
+      <label for="province">Province: </label>
+      <select name="province" id="province">
+        <option value="">SELECT</option>
+        <option value="BANGKOK">Bangkok</option>
+        <option value="PHUKET">Phuket</option>
+        <option value="RANONG">Ranong</option>
+      </select>
+    </div>
+    <br />
+    <div>
+      <label for="district">District: </label>
+      <select name="district" id="district">
+        <option value="">SELECT</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <!-- LAB11 -->
+    <button id="increase">+</button>
+    <span id="count">0</span>
+    <button id="decrease">-</button>
+    <button id="reset">Reset</button>
+    <hr />
+
+    <!-- LAB12 -->
+    <button id="add">Add</button>
+    <ul id="container"></ul>
+
+    <script>
+      // LAB1
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => alert("1")); // (1)
+      button.removeEventListener("click", () => alert("1")); // (2)
+      button.onclick = () => alert(2); // (3)
+
+      // LAB2,3
+      const form = document.querySelector("form");
+      //   DOM property
+      //   form.onsubmit = () => alert("Form is submitted");
+      //   form.onsubmit = null
+      //   Event listener
+      const handle = (e) => {
+        e.preventDefault();
+        alert("Form is submitted");
+      };
+      form.addEventListener("submit", handle);
+      setTimeout(() => form.removeEventListener("submit", handle), 10000);
+
+      // LAB4
+      const a = document.querySelector("a");
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        confirm(`Leave for ${e.target.href}?`) &&
+          (location.href = e.target.href);
+      });
+
+      // LAB5
+      const inputs = document.querySelectorAll(".lab5");
+      for (let el of inputs) {
+        el.addEventListener("click", (e) => console.log(e.target.name));
+        el.addEventListener("input", (e) => console.log(e.target.value));
+      }
+
+      // LAB6
+      const lab6 = document.getElementById("lab6");
+      lab6.addEventListener("click", function () {
+        // lab6.classList.add("hidden");
+        this.style.display = "none";
+      });
+
+      // LAB7
+      const lab7 = document.getElementById("lab7");
+      const lab7Text = lab7.nextElementSibling;
+      lab7.addEventListener("click", () => {
+        lab7Text.classList.toggle("hidden");
+      });
+
+      // LAB8
+      const lab8Btn = document.getElementById("lab8");
+      const lab8Text = lab8Btn.nextElementSibling;
+      lab8Btn.addEventListener("click", () => {
+        // if (lab8.innerText === "Hide") {
+        //   lab8.innerText = "Show";
+        //   lab8Text.classList.add("hidden");
+        // } else {
+        //   lab8.innerText = "Hide";
+        //   lab8Text.classList.remove("hidden");
+        // }
+        // if (lab8Text.style.display === "none") {
+        //   lab8Text.style.display = "";
+        //   lab8.textContent = "Hide";
+        // } else {
+        //   lab8Text.style.display === "none";
+        //   lab8.textContent = "Show";
+        // }
+        if (lab8Text.classList.contains("hidden")) lab8Btn.textContent = "Hide";
+        else lab8Btn.textContent = "Show";
+        lab8Text.classList.toggle("hidden");
+      });
+
+      // LAB9
+      // const lab9 = document.getElementById("lab9");
+      // const lab9Input = lab9.querySelector("input");
+      // const lab9Btn = lab9.querySelector("button");
+      // const lab9Warn = lab9.querySelector("span");
+      // lab9.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   const input = lab9Input.value.trim();
+
+      //   lab9Input.style.border = "2px inset red";
+      //   if (input === "") {
+      //     lab9Warn.innerText = "Phone number is required";
+      //     return;
+      //   }
+      //   if (isNaN(+input)) {
+      //     lab9Warn.innerText = "Phone number must numeric";
+      //     return;
+      //   }
+      //   if (input.length !== 10) {
+      //     lab9Warn.innerText = "Invalid length";
+      //     return;
+      //   }
+
+      //   lab9Input.style.border = "";
+      //   lab9Warn.innerText = "";
+      //   alert("Your number is valid");
+      // });
+      const lab9Btn = document.getElementById("lab9btn");
+      lab9Btn.addEventListener("click", function () {
+        const input = document.getElementById("lab9input");
+        const value = input.value;
+        const warn = document.getElementById("lab9warn");
+
+        if (value === "") {
+          warn.textContent = "Phone number is required";
+          warn.classList.remove("hidden");
+          input.classList.add("error");
+        } else if (
+          isNaN(value.trim()) ||
+          value.startsWith("0x") ||
+          value.startsWith("0o") ||
+          value.startsWith("0b")
+        ) {
+          warn.textContent = "Phone number must be numeric";
+          warn.classList.remove("hidden");
+          input.classList.add("error");
+        } else if (value.length !== 10) {
+          warn.textContent = "Invalid length";
+          warn.classList.remove("hidden");
+          input.classList.add("error");
+        } else {
+          warn.classList.add("hidden");
+          input.classList.remove("error");
+          alert("Your number is valid");
+        }
+      });
+
+      // LAB10
+      // const district = {
+      //   Bangkok: ["Bangkae", "Bangna", "Bangbon"],
+      //   Chiengmai: ["Chiang Dao", "Mae Rim", "San Sai"],
+      //   Phuket: ["Kathu", "Thalang"],
+      // };
+      // const placeholder = "<option value=''>Select</option>";
+      // const optionTag = (value) => `<option value='${value}'>${value}</option>`;
+
+      // const lab10P = document.getElementById("province");
+      // lab10P.innerHTML = Object.keys(district).reduce(
+      //   (prev, cur) => prev + optionTag(cur),
+      //   placeholder
+      // );
+
+      // const lab10D = document.getElementById("district");
+      // lab10D.innerHTML = placeholder;
+
+      // lab10P.addEventListener("change", () => {
+      //   const provinceValue = lab10P.value;
+      //   if (provinceValue !== "") {
+      //     lab10D.innerHTML = district[provinceValue].reduce(
+      //       (prev, cur) => prev + optionTag(cur),
+      //       placeholder
+      //     );
+      //   } else {
+      //     lab10D.innerHTML = placeholder;
+      //   }
+      // });
+
+      const mapProvinceDistrict = {
+        BANGKOK: ["BANGBON", "BANGKAE", "BANGKAPI"],
+        PHUKET: ["KATHU", "THALANG"],
+        RANONG: ["KRA BURI", "KA POE"],
+      };
+
+      const province = document.querySelector("#province");
+      province.addEventListener("change", function () {
+        const district = document.querySelector("#district");
+        const provinceSelected = province.value;
+        const showDistricts = mapProvinceDistrict[provinceSelected] || [];
+
+        let str = `<option value="">SELECT</option>`;
+        for (let el of showDistricts) {
+          str += `<option value="${el}">${el}</option>`;
+        }
+        district.innerHTML = str;
+
+        // let strMap =
+        //   `<option value="">SELECT</option>` +
+        //   showDistricts
+        //     .map((el) => `<option value="${el}">${el}</option>`)
+        //     .join("");
+      });
+
+      // LAB11
+      const increase = document.getElementById("increase");
+      const decrease = document.getElementById("decrease");
+      const reset = document.getElementById("reset");
+      const count = document.getElementById("count");
+
+      increase.addEventListener("click", () => {
+        count.innerText = +count.innerText + 1;
+      });
+      decrease.addEventListener("click", () => {
+        count.innerText = +count.innerText && +count.innerText - 1;
+      });
+      reset.addEventListener("click", () => {
+        count.innerText = 0;
+      });
+
+      // LAB12
+      // const add = document.getElementById("add");
+      // const container = document.getElementById("container");
+
+      // const handelClickEdit = () => console.log(this);
+      // function handelClickDel() {
+      //   console.log(this);
+      // }
+
+      // function handelClickAdd() {
+      //   console.log("Clicked");
+      //   const item = document.createElement("li");
+      //   const title = prompt("Enter new title");
+      //   item.innerHTML = `<span>${title}</span> <button>Edit</button> <button>Delete</button>`;
+      //   container.prepend(item);
+      //   const buttons = container.querySelectorAll("button");
+      //   const edit = buttons[0];
+      //   const del = buttons[1];
+      //   edit.addEventListener("click", handelClickEdit);
+      //   del.addEventListener("click", handelClickDel);
+      // }
+
+      // add.addEventListener("click", handelClickAdd);
+
+      const btnAdd = document.querySelector("#add");
+      btnAdd.addEventListener("click", function () {
+        const input = prompt("Enter new task");
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.innerHTML = input;
+        const btnEdit = document.createElement("button");
+        btnEdit.innerHTML = "Edit";
+        const btnDelete = document.createElement("button");
+        btnDelete.innerHTML = "Delete";
+
+        span.addEventListener("click", function () {
+          this.classList.toggle("line-through");
+        });
+        btnEdit.addEventListener("click", function () {
+          const editText = prompt("Enter edit task");
+          const currentSpan = this.previousElementSibling;
+          currentSpan.innerHTML = editText;
+        });
+        btnDelete.addEventListener("click", function () {
+          this.closest("li").remove();
+        });
+
+        li.append(span);
+        li.append(btnEdit);
+        li.append(btnDelete);
+        const ul = document.querySelector("ul");
+        ul.append(li);
+      });
+    </script>
+  </body>
+</html>

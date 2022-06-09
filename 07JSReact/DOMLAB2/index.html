@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn-red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LAB1 -->
+    <!-- <ul>
+      <li>Cows</li>
+      <li>Donkeys</li>
+      <li>Dogs</li>
+      <li>Tigers</li>
+    </ul> -->
+
+    <!-- LAB3 -->
+    <!-- <ol id="elem">
+        <li>Hello</li>
+        <li>World</li>
+    </ol> -->
+
+    <!-- LAB4 -->
+    <button class="btn">Submit</button>
+
+    <script>
+      //LAB1
+      //   const lab1Li = document.querySelectorAll("li");
+      // //   Array.prototype.forEach.call(lab1Li, (item) => {
+      // //     alert(item.innerHTML);
+      // //   });
+      //   for (let el of lab1Li) {
+      //     console.log(el.innerText);
+      //   }
+
+      // // LAB2
+      // const lab2Ul = document.createElement("ul");
+      // let input = "";
+      // while(true) {
+      //     input = prompt("Enter something ...");
+      //     if (input === "" || input === null) break;
+      //     lab2Ul.insertAdjacentHTML("beforeend", `<li>${input}</li>`);
+      // }
+      // if (lab2Ul.innerHTML !== "") {
+      //     document.body.prepend(lab2Ul);
+      // }
+
+      // // LAB3
+      // const clear = (elem) => {
+      //     elem.innerHTML = "";
+      // };
+      // clear(document.getElementById("elem"));
+
+      // LAB4
+        const btn = document.querySelector("button");
+      // //   setTimeout(() => {
+      // //     btn.style.backgroundColor = "red";
+      // //     setTimeout(() => {
+      // //       btn.style.backgroundColor = "";
+      // //     }, 3000);
+      // //   }, 3000);
+
+      //   setTimeout(() => {
+      //     btn.classList.add("btn-red");
+      //     setTimeout(() => {
+      //       btn.classList.remove("btn-red");
+      //     }, 3000);
+      //   }, 3000);
+
+      setInterval(() => btn.classList.toggle("btn-red"), 3000)
+    </script>
+  </body>
+</html>
